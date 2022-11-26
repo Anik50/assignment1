@@ -10,7 +10,9 @@ RUN apt-get update
 RUN apt install snapd -y
 RUN apt-get install -y ca-certificates wget
 RUN apt-get install curl -y
-RUN snap install redis || true
+#RUN snap install redis || true
+RUN apt-get -y install redis-server
+RUN service redis-server start
 
 RUN apt-get update
 RUN systemctl unmask snapd.service
@@ -23,6 +25,7 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 # configure the container to run in an executed manner
-ENTRYPOINT [ "python" ]
+ENTRYPOINT ["python"]
 
-CMD ["main.py" ]
+CMD ["main.py"]
+

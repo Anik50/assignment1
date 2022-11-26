@@ -1,0 +1,2 @@
+Nov 26, 2022 8:08:09 PM teast.example.Main main
+SEVERE: exception:java.io.FileNotFoundException: input.txt (The system cannot find the file specified)

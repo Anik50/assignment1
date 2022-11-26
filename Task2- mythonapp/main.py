@@ -21,7 +21,7 @@ def hello_geek():
     res_no = res_count()
 
     if res_no%5==0:
-        REDIS_CLIENT = Redis(host='192.168.1.0.99', port=6379, db=0)
+        REDIS_CLIENT = Redis(host='172.173.129.161', port=6379, db=0)
         REDIS_CLIENT.rpush('QUEUE', 1)
         print("\n\n pass ..", res_no)
 
@@ -30,4 +30,4 @@ def hello_geek():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False, host='0.0.0.0')
